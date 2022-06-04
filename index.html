@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <title>Air Quality Index(AQI)</title>
+    <link rel = "icon" href =  
+"logo.png" 
+        type = "image/x-icon">
+</head>
+<body class="bg-dark" style="background-image:url(background.jpg)">
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+  <a href="http://www.mmmut.ac.in/" class="pull-left"><img src="logo.png" style="width:3em;margin-right:4em"></a> 
+    <a class="navbar-brand" href="https://www.airnow.gov/aqi/aqi-basics/"><strong>Air Quality Index(AQI)</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html"><strong>Home</strong></a>
+        </li>   
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><b>Input Data</b></h5>
+             <form action="" method="post" class="data-input">
+                    <div class="form-label-group">
+                          <label for="Temperature(T)"><b>Temperature(T)</b> <span style="color: red"><b>*</b></span></label>
+                         <input type="number" name="Temperature(T)" id="Temperature(T)" class="form-control"  placeholder="Temperature(T)"  required autofocus>
+                        </div> <br/>
+                        <div class="form-label-group">
+                            <label for="Maximum Temerature(TM)"><b>Maximum Temperature(TM)</b> <span style="color:red"><b>*</b></span></label>
+                            <input type="number" name="Maximum Temperature(TM)" id="Maximum Temperature(TM)" class="form-control" placeholder="Maximum Temperature(TM)" required autofocus>
+                        </div> <br/>
+                        <label for="Tm"><b>Tm</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="number" id="Tm" name="Tm" class="form-control" placeholder="Tm" required>
+                        </div><br/>
+                        <label for="Average Relative Humidity(H%)"><b>Average Relative Humidity(H%)</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="number" id="Average Relative Humidity(H%)" name="Average Relative Humidity(H%)" class="form-control" placeholder="Average Relative Humidity(H%)" required>
+                        </div><br/>
+                        <label for="maximum sustained wing speed(VM)"><b>Maximum Sustained Wing Speed(VM)</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="number" id="maximum sustained wing speed(VM)" name="maximum sustained wing speed(VM)" class="form-control" placeholder="maximum sustained wing speed(VM)" required>
+                        </div><br/>
+                        <label for="average windspeed(km/h)(V)"><b>Average Windspeed(km/h)(V)</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="number" id="average windspeed(km/h)(V)" name="average windspeed(km/h)(V)" class="form-control" placeholder="average windspeed(km/h)(V)" required>
+                        </div><br/>
+                        <label for="VV"><b>VV</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="number" id="VV" name="VV" class="form-control" placeholder="VV" required>
+                        </div><br/>
+                        <label for="SLP"><b>SLP</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="number" id="SLP" name="SLP" class="form-control" placeholder="SLP" required>
+                        </div><br/>
+                    
+                        <button type="submit" name="InputData" class="btn btn-lg btn-success btn-block text-uppercase" >SUBMIT</button>
+                 </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
