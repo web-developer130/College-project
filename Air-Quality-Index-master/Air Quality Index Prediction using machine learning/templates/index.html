@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <title>Air Quality Index(AQI)</title>
+    <link rel = "icon" href =  
+"{{url_for('static', filename='images/logo.png')}}"
+        type = "image/x-icon">
+</head>
+<body class="bg-dark" style="background-image:url('{{url_for('static', filename='images/background.jpg')}}')">
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+  <a href="http://www.mmmut.ac.in/" class="pull-left"><img src="{{url_for('static', filename='images/logo.png')}}" style="width:3em;margin-right:4em"></a>
+    <a class="navbar-brand" href="https://www.airnow.gov/aqi/aqi-basics/"><strong>Air Quality Index(AQI)</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
+        </li>   
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><b>Input Data</b></h5>
+             <form action="{{ url_for('predict')}}" method="post" class="data-input">
+                    <div class="form-label-group">
+                          <label for="Temperature(T)"><b>Temperature(T) in <span>&#8451;</span></b> <span style="color: red"><b>*</b></span></label>
+                         <input type="text" name="Temperature(T)" id="Temperature(T)" class="form-control"  placeholder="Temperature(T)"  required autofocus>
+                        </div> <br/>
+                        <div class="form-label-group">
+                            <label for="Maximum Temperature(TM)"><b>Maximum Temperature(TM) in <span>&#8451;</span></b> <span style="color:red"><b>*</b></span></label>
+                            <input type="text" name="Maximum Temperature(TM)" id="Maximum Temperature(TM)" class="form-control" placeholder="Maximum Temperature(TM)" required autofocus>
+                        </div> <br/>
+                        <label for="Tm"><b>Minimum Temperature(Tm) in <span>&#8451;</span></b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="Tm" name="Tm" class="form-control" placeholder="Tm" required>
+                        </div><br/>
+                        <label for="Atmoshperic pressure at sea level (SLP) in hPa"><b>Atmoshperic pressure at sea level (SLP) in hPa</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="Atmoshperic pressure at sea level (SLP) in hPa" name="Atmoshperic pressure at sea level (SLP) in hPa" class="form-control" placeholder="Atmoshperic pressure at sea level in (hPa)" required>
+                        </div><br/>
+                        <label for="Average Relative Humidity(H) in(%)"><b>Average Relative Humidity(H) in(%)</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="Average Relative Humidity(H) in(%)" name="Average Relative Humidity(H) in(%)" class="form-control" placeholder="Average Relative Humidity(H) in(%)" required>
+                        </div><br/>
+                        <label for="Average Visbility(VV) in (Km)"><b>Average Visbility(VV) in (Km)</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="Average Visbility(VV) in (Km)" name="Average Visbility(VV) in (Km)" class="form-control" placeholder="Average Visbility(VV) in (Km)" required>
+                        </div><br/>
+                        <label for="V"><b>Average Wind Speed(V) in Km/h)</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="V" name="V" class="form-control" placeholder="V" required>
+                        </div><br/>
+                        <label for="VM"><b>Maximum Sustained Wind Speed(VM) in Km/h</b><span style="color: red"><b>*</b></span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="VM" name="VM" class="form-control" placeholder="VM" required>
+                        </div><br/>
+                    
+                        <button type="submit" name="InputData" class="btn btn-lg btn-success btn-block text-uppercase" >PREDICT</button>
+                 </form>
+                    <br>
+                    <h3>{{ prediction_text }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
